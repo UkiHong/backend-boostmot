@@ -5,13 +5,11 @@ description = ""
 authors = ["Uki Hong <suhong9507@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "boostmot_backend"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-django = "^4.1.7"
+django = "~4.0"
 beautifulsoup4 = "^4.11.2"
-pillow = "^9.5.0"
 djangorestframework = "^3.14.0"
 pyjwt = "^2.6.0"
 django-environ = "^0.10.0"
