@@ -187,15 +187,33 @@ REST_FRAMEWORK = {
 }
 
 if DEBUG:
-    CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:3000"]
-    CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000"]
+    CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:3000", "http://localhost:3000"]
+    CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000", "http://localhost:3000"]
 else:
     CORS_ALLOWED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
     CSRF_TRUSTED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
 
 
 CORS_ALLOW_CREDENTIALS = True
-
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]
 
 if not DEBUG:
     SESSION_COOKIE_DOMAIN = ".boostmot.xyz"
@@ -205,6 +223,4 @@ if not DEBUG:
         integrations=[
             DjangoIntegration(),
         ],
-        traces_sample_rate=1.0,
-        send_default_pii=True,
     )

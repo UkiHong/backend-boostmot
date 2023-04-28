@@ -1,7 +1,6 @@
 import jwt
 import requests
 from django.conf import settings
-from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -79,7 +78,7 @@ class ChangePassword(APIView):
 
 
 class LogIn(APIView):
-    permission_classes = [IsAuthenticated]
+    ##permission_classes = [IsAuthenticated]
 
     def post(self, request):
         username = request.data.get("username")
@@ -126,3 +125,30 @@ class JWTLogIn(APIView):
             return Response({"token": token})
         else:
             return Response({"error": "wrong password"})
+
+
+class SignUp(APIView):
+    def post(self, request):
+        print("signup page test")
+        try:
+            name = request.data.get("name")
+            username = request.data.get("username")
+            email = request.data.get("email")
+            password = request.data.get("password1")
+            print("Collect Data ", name, username, email, password)
+            try:
+                user = User.objects.get(email=email)
+                return Response(status=status.HTTP_200_OK)
+            except User.DoesNotExist:
+                user = User.objects.create(
+                    email=email,
+                    username=username,
+                    password=password,
+                    name=name,
+                    avatar="/",
+                )
+                user.save()
+                login(request, user)
+                return Response(status=status.HTTP_200_OK)
+        except Exception:
+            return Response(status=status.HTTP_400_BAD_REQUEST)
