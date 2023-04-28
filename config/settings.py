@@ -194,7 +194,9 @@ else:
     CSRF_TRUSTED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
 
 CORS_ORIGIN_ALLOW_ALL = True
-
+CORS_ORIGIN_WHITELIST = [
+    "https://boostmot.xyz",
+]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
     "DELETE",
