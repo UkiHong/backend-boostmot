@@ -193,6 +193,7 @@ else:
     CORS_ALLOWED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
     CSRF_TRUSTED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
