@@ -139,14 +139,6 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
-name = "package"
-version = "0.1.1"
-description = "package is a package to package your package"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "psycopg2-binary"
 version = "2.9.6"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
@@ -274,7 +266,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.11"
-content-hash = "d6660d96097779629825d2a238d13bb8434c82bfe1697982006e071a4a26e296"
+content-hash = "6d054e9f87828489c49e75217217b1af8bf9e257cc79249498655cf861cf948b"
 
 [metadata.files]
 asgiref = [
@@ -477,9 +469,6 @@ gunicorn = [
 idna = [
     {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
     {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
-]
-package = [
-    {file = "package-0.1.1.tar.gz", hash = "sha256:01eee19a56a936bd63222f0a3c531fcdba37b5ad1bd833b960d62fb960b4955e"},
 ]
 psycopg2-binary = [
     {file = "psycopg2-binary-2.9.6.tar.gz", hash = "sha256:1f64dcfb8f6e0c014c7f55e51c9759f024f70ea572fbdef123f85318c297947c"},
