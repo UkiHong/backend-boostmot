@@ -201,6 +201,8 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 if not DEBUG:
+    SESSION_COOKIE_DOMAIN = ".boostmot.xyz"
+    CSRF_COOKIE_DOMAIN = ".boostmot.xyz"
     sentry_sdk.init(
         dsn="https://def273b292834e4bab2e847bc25a66db@o4505092560650240.ingest.sentry.io/4505092566351872",
         integrations=[
