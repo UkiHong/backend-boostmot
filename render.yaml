@@ -1,12 +1,12 @@
 databases:
-  - name: boostmot
+  - name: boostmot-db
     databaseName: boostmot
     user: boostmot
     region: singapore
 
 services:
   - type: web
-    name: boostmot
+    name: boostmot-backend
     env: python
     region: singapore
     buildCommand: "./build.sh"
