@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 import environ
 import dj_database_url
 
@@ -190,4 +191,5 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:3000"]
 
 
+CF_ID = env("CF_ID")
 CF_TOKEN = env("CF_TOKEN")
