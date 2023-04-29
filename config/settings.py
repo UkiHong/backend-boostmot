@@ -215,8 +215,8 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
 ]
 
-CF_ID = env("CF_ID")
-CF_TOKEN = env("CF_TOKEN")
+# CF_ID = env("CF_ID")
+# CF_TOKEN = env("CF_TOKEN")
 
 if not DEBUG:
     SESSION_COOKIE_DOMAIN = ".boostmot.xyz"
