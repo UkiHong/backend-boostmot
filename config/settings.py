@@ -180,7 +180,7 @@ PAGE_SIZE = 5
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        # "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
         "rest_framework.authentication.TokenAuthentication",
         # "config.authentication.JWTAuthentication",
     ]
@@ -193,7 +193,6 @@ else:
     CORS_ALLOWED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
     CSRF_TRUSTED_ORIGINS = ["https://boostmot-frontend.onrender.com"]
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = [
@@ -215,6 +214,9 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
+CF_ID = env("CF_ID")
+CF_TOKEN = env("CF_TOKEN")
 
 if not DEBUG:
     SESSION_COOKIE_DOMAIN = ".boostmot.xyz"
